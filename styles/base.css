@@ -1,0 +1,37 @@
+body{
+    color: #8B8D8F;
+}
+.flex-container section{
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+h1{
+    color: #8B8D8F;
+}
+h1>span, a{
+    color: #F79633;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #F79633;
+}
+section#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+section#body{
+    display: grid;
+    grid-template-columns: 79vw 19vw;
+    grid-gap: 1vh;
+}
+.sidebar{ 
+    padding-right: 15px;
+}
+tr[focus=true]{
+    background-color: rgb(247 150 51 / 46%);
+}
+.card{
+    padding: 10px 20px;
+}

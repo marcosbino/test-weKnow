@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Rest Api weKnow</title>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/index.js"></script>
+</head>
+<body>
+    <div class="flex-container">
+        <section id="header">
+            <h1>we<span>Know</span></h1>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="new-entry">Cadastrar</a>
+                </li>
+            </ul>
+        </section>
+        <section id="body">
+            <table class="table" id="list-table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+            <div class="sidebar">
+                <div class="card">
+                    <h2>Atalhos</h2>
+                    <p>ctrl + c: Cadastrar novo item</p>
+                    <p>setas cima e baixo: Mover foco da linha</p>
+                    <p>ctrl + e: Editar linha em foco</p>
+                    <p>ctrl + d: Deletar linha em foco</p>
+                </div>
+            </div>
+        </section>
+        <section id="footer"></section>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modal-edit">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar produto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <input type="hidden" name="id" id="id-produto">
+                        <label for="descricao">Descrição do produto</label>
+                        <input type="text" name="descricao" id="descricao">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary modal-save">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modal-cadastrar">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar produto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <input type="hidden" name="id" class="id-produto" value="0">
+                        <label for="descricao">Descrição do produto</label>
+                        <input type="text" name="descricao" class="descricao">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary modal-create">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/template" id="table-row">
+    <tr data-id="{{id}}" focus="false">
+        <th scope="row">{{index}}</th>
+        <td>{{descricao}}</td>
+        <td>
+            <button class="btn btn-primary edit-item" data-id="{{id}}">Editar</button>
+            <button class="btn btn-danger delete-item" data-id="{{id}}">Deletar</button>
+        </td>
+    </tr>
+</script>
+</html>
